@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="text-center">
+        <div class="m-5">
+            <h4>병관이 맘속으로 로그인</h4>
+        </div>
+        <div class="m-5">
+            <form action="{% url 'accountapp:login' %}" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <div class="m-5">
+                    <input type="submit" class="btn btn-dark rounded-pill px-5">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div style="height: 30rem; background-color: aqua; margin: 2rem; border-radius:1rem;">
-    <h1>is it working...?</h1>
+
+<div style="background-color: aliceblue; text-align: center;">
+    <h1>병관이 맘속으로 들어오실래요?</h1>
+
+    <form action="/accounts/hello_world/" method="POST">
+        {% csrf_token %}
+        <input type="text" name="input_text">
+        <input type="submit" class="btn btn-outline-info rounded-pill px-6">
+    </form>
+
+    {% for data in data_list %}
+    <h3>{{ data.text }}</h3>
+    {% endfor %}
+
 </div>
+
 {% endblock %}

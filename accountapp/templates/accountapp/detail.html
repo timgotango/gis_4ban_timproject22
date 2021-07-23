@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="text-center m-auto mx-500">
+        <div class="m-5">
+            <h4>{{ target_user.username }}</h4>
+        </div>
+        <div class="m-5">
+            {{ target_user.date_joined }}
+        </div>
+
+        {% if user == target_user %}
+        <div class="m-5">
+            <a href="{% url "accountapp:update" pk=target_user.pk %}">내 정보 수정</a>
+        </div>
+        <div class="m-5">
+            <a href="{% url "accountapp:delete" pk=target_user.pk %}">병관이 맘 밖으로</a>
+        </div>
+        {% endif %}
+
+    </div>
+{% endblock %}

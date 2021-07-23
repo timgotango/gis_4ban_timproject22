@@ -1,17 +1,14 @@
 {% extends 'base.html' %}
-{% load bootstrap4 %}
-
 {% block content %}
     <div class="text-center m-auto mx-500">
         <div class="m-5">
-            <h4>병관이 맘속으로 로그인</h4>
+            <h4>병관이한테서 떠날거야?ㅠㅠ</h4>
         </div>
         <div class="m-5">
-            <form action="{% url 'accountapp:login' %}" method="post">
+            <form action="{% url 'accountapp:delete' pk=target_user.pk %}" method="post">
                 {% csrf_token %}
-                {% bootstrap_form form %}
                 <div class="m-5">
-                    <input type="submit" class="btn btn-dark rounded-pill px-5">
+                    <input type="submit" value="힝" class="btn btn-danger rounded-pill px-5">
                 </div>
             </form>
         </div>

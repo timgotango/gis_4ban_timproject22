@@ -3,7 +3,17 @@
 {% block content %}
     <div class="text-center m-auto mx-500">
         <div class="m-5">
-            <h4>{{ target_user.username }}</h4>
+            {% if target_user.profile %}
+                <img src="{{ target_user.profile.image.url }}"
+                     class="profile_image m-4"
+                     alt="">
+                <h4>{{ target_user.profile.nickname }}</h4>
+                <h5>{{ target_user.profile.message }}</h5>
+            {% else %}
+                <h4>
+                    <a href="{% url 'profileapp:create' %}">프로필을 생성하시오</a>
+                </h4>
+            {% endif %}
         </div>
         <div class="m-5">
             {{ target_user.date_joined }}

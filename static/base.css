@@ -21,3 +21,22 @@
     border-radius: 20rem;
     object-fit: cover;
 }
+
+.NNS_B {
+    font-family: "NanumSquareB", cursive;
+}
+
+.round_button {
+    color: dimgray;
+    border-radius: 15rem;
+    text-decoration: none;
+    padding: 0.2rem;
+}
+
+.round_button:hover {
+    color: black;
+}
+
+.round_button_border {
+    box-shadow: 0 0 3px black;
+}

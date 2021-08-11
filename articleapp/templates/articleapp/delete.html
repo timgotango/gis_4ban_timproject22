@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
-{% load bootstrap4 %}
 
 {% block content %}
     <div class="text-center m-auto mw-500">
         <div class="m-5">
-            <h4>병관이 맘속으로 회원가입</h4>
+            <h4>{{ target_article.title }} 게시글 삭제하기</h4>
         </div>
         <div class="m-5">
-            <form action="{% url 'accountapp:create' %}" method="post">
+            <form action="{% url 'articleapp:delete' pk=target_article.pk %}" method="post">
                 {% csrf_token %}
-                {% bootstrap_form form %}
                 <div class="m-5">
-                    <input type="submit" class="btn btn-dark rounded-pill px-5">
+                    <input type="submit" class="btn btn-danger rounded-pill px-5">
                 </div>
             </form>
         </div>

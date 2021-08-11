@@ -4,10 +4,10 @@
 {% block content %}
     <div class="text-center m-auto mw-500">
         <div class="m-5">
-            <h4>병관이 맘속으로 회원가입</h4>
+            <h4>게시글 수정하기</h4>
         </div>
         <div class="m-5">
-            <form action="{% url 'accountapp:create' %}" method="post">
+            <form action="{% url 'articleapp:update' pk=target_article.pk %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% bootstrap_form form %}
                 <div class="m-5">

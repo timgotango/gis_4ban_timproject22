@@ -62,3 +62,10 @@
     margin: 1rem
 }
 
+/* 최대 너비 이하까지는 아래 css를 적용시켜주겠다 */
+@media screen and (max-width: 500px){
+    html {
+        /* default font-size: 16px */
+        font-size: 13px;
+    }
+}

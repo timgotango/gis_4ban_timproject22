@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load bootstrap4 %}
 
-</body>
-</html>
+{% block content %}
+    <div class="text-center mw-500 m-auto">
+        <div class="m-5">
+            <h4>프로젝트 생성</h4>
+        </div>
+        <div>
+            {# 파일을 보내는 것이므로 enctype 적어주어야! #}
+            <form action="{% url 'projectapp:create' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <div class="m-5">
+                    <input type="submit" class="btn btn-dark rounded-pill px-5">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

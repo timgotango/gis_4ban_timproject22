@@ -33,4 +33,11 @@
         {% include 'snippets/list_fragment.html' with article_list=object_list %}
     </div>
 
+    <div>
+        <a href="{% url 'projectapp:update' pk=target_project.pk %}"
+                    class="btn btn-success rounded-pill px-5">
+            프로젝트 수정
+        </a>
+    </div>
+
 {% endblock %}

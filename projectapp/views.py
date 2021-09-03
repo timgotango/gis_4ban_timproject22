@@ -7,7 +7,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, DetailView, UpdateView
 from django.views.generic.list import MultipleObjectMixin
 
-from articleapp.decorators import article_ownership_required
+from projectapp.decorators import project_ownership_required
 from articleapp.models import Article
 from projectapp.forms import ProjectCreationForm
 from projectapp.models import Project
@@ -53,8 +53,8 @@ class ProjectListView(ListView):
 
 
 # 프로젝트 업데이트 뷰
-@method_decorator(login_required, 'get')
-@method_decorator(login_required, 'post')
+@method_decorator(project_ownership_required, 'get')
+@method_decorator(project_ownership_required, 'post')
 class ProjectUpdateView(UpdateView):
     model = Project
     form_class = ProjectCreationForm

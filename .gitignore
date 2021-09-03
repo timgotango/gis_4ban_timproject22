@@ -84,3 +84,6 @@ __pycache__/
 media/
 
 staticfiles/
+
+tim_gcp
+tim_gcp.pub

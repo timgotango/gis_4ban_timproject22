@@ -15,7 +15,6 @@ from profileapp.models import Profile
 class ProfileCreateView(CreateView):
     model = Profile
     form_class = ProfileCreationForm
-    # success_url = reverse_lazy('accountapp:hello_world')    # 우선 hello_world 페이지로
     template_name = 'profileapp/create.html'    # 추후에 만들 html 파일
 
     def form_valid(self, form):
@@ -33,7 +32,6 @@ class ProfileUpdateView(UpdateView):
     model = Profile
     form_class = ProfileCreationForm
     context_object_name = 'target_profile'
-    # success_url = reverse_lazy('accountapp:hello_world')
     template_name = 'profileapp/update.html'
 
     def get_success_url(self):

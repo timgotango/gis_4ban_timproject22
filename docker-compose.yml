@@ -14,7 +14,7 @@ services:
       - media:/data/media/
 
   django:
-    image: tim_django:4
+    image: tim_django:5
     networks:
       - network
     volumes:
@@ -36,10 +36,10 @@ services:
       - MARIADB_USER
       - MARIADB_PASSWORD
     environment:
-      MARIADB_ROOT_PASSWORD: password1234
       MARIADB_DATABASE: django
-      MARIADB_USER: django
-      MARIADB_PASSWORD: password1234
+      MARIADB_USER_FILE: /run/secrets/MARIADB_USER
+      MARIADB_PASSWORD_FILE: /run/secrets/MARIADB_PASSWORD
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/MARIADB_ROOT_PASSWORD
 
 networks:
   network:
@@ -51,4 +51,10 @@ volumes:
 
 secrets:
   DJANGO_SECRET_KEY:
+    external: true
+  MARIADB_ROOT_PASSWORD:
+    external: true
+  MARIADB_USER:
+    external: true
+  MARIADB_PASSWORD:
     external: true

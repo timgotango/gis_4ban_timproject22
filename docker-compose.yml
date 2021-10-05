@@ -12,6 +12,7 @@ services:
       - /home/xodzm3131/nginx.conf:/etc/nginx/nginx.conf
       - static:/data/static/
       - media:/data/media/
+      - log:/var/log/nginx/
 
   django:
     image: tim_django:5
@@ -48,6 +49,7 @@ volumes:
   static:
   media:
   mariadb:
+  log:
 
 secrets:
   DJANGO_SECRET_KEY:

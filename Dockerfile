@@ -2,7 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo 'AmuMal1'
+RUN echo 'AmuMal2'
 
 RUN git clone https://github.com/timgotango/gis_4ban_timproject22.git
 

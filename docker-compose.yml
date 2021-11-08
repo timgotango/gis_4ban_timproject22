@@ -28,7 +28,7 @@ services:
     command: /var/log/nginx/tim_access.log -o /var/log/nginx/report.html --real-time-html --log-format COMBINED
 
   django:
-    image: tim_django:5
+    image: tim_django:6
     networks:
       - network
     volumes:
